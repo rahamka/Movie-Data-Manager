@@ -1,0 +1,209 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* LIGHT & DARK THEMES */
+:root {
+  --bg: #0f1117;
+  --text: #fff;
+  --card: #1a1f28;
+  --input: #1c2029;
+  --border: #2a2e38;
+  --primary: #4db2ff;
+}
+
+.light {
+  --bg: #ffffff;
+  --text: #111;
+  --card: #f2f4f7;
+  --input: #e8ebef;
+  --border: #d1d4db;
+  --primary: #007bff;
+}
+
+/* BODY */
+body {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  transition: 0.4s ease-in-out;
+}
+
+/* THEME BUTTON */
+#themeToggle {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  font-size: 22px;
+  padding: 8px 14px;
+  border-radius: 50%;
+  background: var(--card);
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
+}
+
+/* ASIDE */
+aside {
+  width: 260px;
+  background: var(--card);
+  padding: 25px;
+  border-left: 1px solid var(--border);
+  transition: 0.3s;
+}
+
+aside #imgDiv {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+aside a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+aside a img {
+  margin-top: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+aside a img:hover {
+  transform: scale(1.05);
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  padding: 40px;
+}
+
+header h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+/* FORM */
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 320px;
+  margin: 20px auto;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+input,
+textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--input);
+  color: var(--text);
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+  transform: scale(1.03);
+}
+
+button {
+  padding: 12px 20px;
+  background: var(--primary);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+caption {
+  padding: 18px;
+  font-size: 1.3rem;
+  background: var(--input);
+  font-weight: bold;
+  color: var(--primary);
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  padding: 16px;
+}
+
+th {
+  background: var(--input);
+  color: var(--primary);
+}
+
+tr:hover {
+  background: #232a36;
+  color: white;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  background: rgb(255, 68, 68);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: rgb(255, 98, 98);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+    border-left: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .form-wrapper {
+    width: 90%;
+  }
+}
